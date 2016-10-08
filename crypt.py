@@ -48,5 +48,4 @@ elif cipher == 2:
 else:
 	print ('Please enter a number')
 
-#caesar('hello', 3)
 
