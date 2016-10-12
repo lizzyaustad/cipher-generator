@@ -26,11 +26,11 @@ def bacon(string):
     prompt = 'please enter plaintext containing ' +\
              str((len(to_encrypt)) * 5) + ' characters: '
     plaintext = input(prompt)
-    encrypted = ""
+    encrypted = ''
     index = 0
-    string.lower()
+    to_encrypt = to_encrypt.lower()
 
-    for letter in string:
+    for letter in to_encrypt:
 		for char in code[ord(letter) - 97]:
 			if char == 'b':
 				encrypted += plaintext[index].upper()
@@ -84,12 +84,23 @@ def dna(string):
         encrypted += code[ord(letter) - 97]
     print ('encrypted string: ', encrypted)
 
+def enumerate(string):
+	print ('your string: ', string)
+	encrypted = ''
+	string = string.lower()
+	for letter in string:
+		if letter == ' ' or letter == ',':
+			encrypted += letter
+		else:
+			encrypted += str(ord(letter)-96)
+			encrypted += '-'
+	print ('encrypted string: ', encrypted)
 
 print('~*~*~*~cipher generator~*~*~*~')
 string = input('enter string to encrypt: ')
 print ('*****************************')
 cipher = int(input('1) atbash \n2) bacon \n3)\
-caesar \n4) dna \nchoose a cipher: '))
+caesar \n4) dna \n5) enumerate \nchoose a cipher: '))
 if cipher == 1:
     atbash(string)
 elif cipher == 2:
@@ -99,5 +110,7 @@ elif cipher == 3:
     caesar(string, shift)
 elif cipher == 4:
     dna(string)
+elif cipher == 5:
+	enumerate(string)
 else:
     print ('please enter a number from the choices above')
