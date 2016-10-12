@@ -31,16 +31,16 @@ def bacon(string):
     string.lower()
 
     for letter in string:
-        for char in code[ord(letter) - 97]:
-            if char == 'b':
-                encrypted += plaintext[index].upper()
-                index += 1
-            elif char == 'a':
-                encrypted += plaintext[index]
-                index += 1
-            while index < len(plaintext) and not plaintext[index].isalpha():
-                encrypted += plaintext[index]
-                index += 1
+		for char in code[ord(letter) - 97]:
+			if char == 'b':
+				encrypted += plaintext[index].upper()
+				index += 1
+			elif char == 'a':
+				encrypted += plaintext[index]
+				index += 1
+			while index < len(plaintext) and not plaintext[index].isalpha():
+				encrypted += plaintext[index]
+				index += 1
     print ('encrypted string: ', encrypted)
 
 
