@@ -1,17 +1,13 @@
 def atbash(string):
-    alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
-            'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-            's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     print ('your string: ', string)
     encrypted = ""
     for letter in string:
-        if not letter.isalpha():
-            encrypted += letter
-        elif letter.islower():
-            encrypted += alph[25 - (ord(letter) - 97)]
-        else:
-            encrypted += caps[25 - caps.index(letter)]
+		if not letter.isalpha():
+			encrypted += letter
+		elif letter.islower():
+			encrypted += chr(219-ord(letter))
+		else:
+			encrypted += chr(155-ord(letter))
     print ('encrypted string: ', encrypted)
 
 
