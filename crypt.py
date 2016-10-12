@@ -79,7 +79,7 @@ def dna(string):
     for letter in string:
         if letter.isalpha():
             to_encrypt += letter
-    to_encrypt.lower()
+    to_encrypt = to_encrypt.lower()
     for letter in to_encrypt:
         encrypted += code[ord(letter) - 97]
     print ('encrypted string: ', encrypted)
